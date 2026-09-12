@@ -3,7 +3,7 @@ import numpy as np
 
 def f(x, v0, theta, g):
     theta_rad = math.radians(theta)
-    return x * math.tan(theta_rad) - (g * x2) / (2 * v02 * math.cos(theta_rad)**2)
+    return x * math.tan(theta_rad) - (g * x ** 2) / (2 * v0 ** 2 * math.cos(theta_rad)**2)
 
 def bisection(f, a, b, tol, v0, theta, g):
     if f(a, v0, theta, g) * f(b, v0, theta, g) >= 0:
@@ -47,7 +47,7 @@ def false_position(f, a, b, tol, n, v0, theta, g):
 
 def f_derivative(x, v0, theta, g):
     theta_rad = math.radians(theta)
-    return math.tan(theta_rad) - (g * x) / (v02 * math.cos(theta_rad)2)
+    return math.tan(theta_rad) - (g * x) / (v0 ** 2 * math.cos(theta_rad) ** 2)
 
 
 def newton_raphson(f, f_derivative, x0, tol, n, v0, theta, g):
@@ -91,7 +91,7 @@ def secant_method(f, x0, x1, tol, n, v0, theta, g):
 
 def g_function(x, v0, theta, g):
     theta_rad = math.radians(theta)
-    return (2 * v02 * math.cos(theta_rad)2 * math.tan(theta_rad)) / g
+    return (2 * v0 ** 2 * math.cos(theta_rad) ** 2 * math.tan(theta_rad)) / g
 
 
 def successive_approximation(x0, tol, n, v0, theta, g):
