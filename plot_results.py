@@ -1,7 +1,10 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
+
+os.makedirs("figures", exist_ok=True)
 
 # Projectile trajectory function
 def f(x, v0, theta, g):
@@ -10,7 +13,7 @@ def f(x, v0, theta, g):
     return (
         x * math.tan(theta_rad)
         - (g * x**2)
-        / (2 * v02 * math.cos(theta_rad)2)
+        / (2 * v0 ** 2 * math.cos(theta_rad) ** 2)
     )
 
 
